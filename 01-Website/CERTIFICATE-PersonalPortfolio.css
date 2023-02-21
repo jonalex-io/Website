@@ -109,10 +109,10 @@ img {
 .nav {
     display: flex;
     justify-content: flex-end;
-    position: static;
+    position: absolute;
     height: auto;
     top: 0;
-    left: 0;
+    /* left: 0; */
     width: 100%;
     background: transparent;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
@@ -138,10 +138,14 @@ img {
     display: block;
     font-size: 2.2rem;
     padding: 2rem;
+    transition: transform 0.3s ease-out;
+    /* TODO make text white */
+    /* transition: var(--main-white); */
 }
 
 .nav-list a:hover {
     background: var(--main-blue);
+    transform: translateY(5px);
 }
 
 /* Welcome section */
@@ -158,6 +162,7 @@ img {
     background-color: #000;
     background-image: url(../assets/mountains-bottom.jpg);
     background-size: cover;
+    background-position: bottom;
 }
 
 .welcome-section>p {
