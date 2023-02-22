@@ -30,53 +30,48 @@ html {
     scroll-behavior: smooth;
 }
 
-
 /* I am using the em unit for breakpoints
    * The calculation is the following
    * screen size divided by browser base font size
    * As an example: a breakpoint at 980px
    * 980px / 16px = 61.25em
   */
-
 /* 1200px / 16px = 75em L */
-@media (max-width: 75em) {
+/* @media (max-width: 75em) {
     html {
         font-size: 60%;
     }
-}
+} */
 
 /* 980px / 16px = 61.25em M */
-@media (max-width: 61.25em) {
+/* @media (max-width: 61.25em) {
     html {
         font-size: 58%;
     }
-}
+} */
 
 /* 460px / 16px = 28.75em S */
-@media (max-width: 28.75em) {
+/* @media (max-width: 28.75em) {
     html {
         font-size: 55%;
     }
-}
+} */
 
 /* Base styles */
-
 body {
     font-family: monospace;
-    /* 18px */
     font-size: 1.8rem;
     font-weight: 400;
     line-height: 1.4;
     color: var(--main-gray);
-    background-color: #000;
 }
 
 body {
     /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
     background: linear-gradient(-45deg, grey, Silver, AntiqueWhite);
     background-size: 500% 500%;
-    animation: gradient 5s ease infinite;
-    height: 100vh;
+    animation: gradient 4s ease infinite;
+    min-height: 100vh;
 }
 
 @keyframes gradient {
@@ -103,7 +98,7 @@ h2 {
 }
 
 h1 {
-    font-size: 6rem;
+    font-size: 3em;
 }
 
 h2 {
@@ -116,8 +111,6 @@ ul {
 
 a {
     text-decoration: none;
-    color: var(--main-white);
-    color: black;
 }
 
 img {
@@ -125,29 +118,22 @@ img {
     width: 100%;
 }
 
-/* nav */
+/* NAV */
 
 .nav {
-    display: flex;
-    justify-content: flex-end;
     position: absolute;
-    height: auto;
-    top: 0;
-    width: 100%;
-    max-width: 1284px;
-    margin-top: 25px;
-    width: 100%;
+    top: 2.5rem;
+    right: 12.5rem;
     background: transparent;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .nav-list {
     display: flex;
-    margin-right: 2rem;
+    margin-right: 1.5rem;
 }
 
 /* move content to center for smallest mobile device */
-@media (max-width: 28.75em) {
+/* @media (max-width: 28.75em) {
     .nav {
         justify-content: center;
     }
@@ -155,13 +141,14 @@ img {
     .nav-list {
         margin: 0 1rem;
     }
-}
+} */
 
 .nav-list a {
     display: block;
     font-size: 2.2rem;
     padding: 2rem;
     transition: transform 0.3s ease-out;
+    color: rgb(50, 50, 50);
     /* TODO make text white */
     /* transition: var(--main-white); */
 }
@@ -172,35 +159,41 @@ img {
 }
 
 /* Welcome section */
-/* BOOKMARK */
+
 
 .welcome-section {
-    max-width: 1284px;
-    height: calc(100vh - 50px);
-    margin: 25px;
+    /* max-width: 1284px; */
+    min-height: calc(100vh - 50px);
+    margin: 2.5rem 12.5rem 2.5rem 12.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 25px;
     /* BACKGROUND */
     background-image: url(../assets/mountains-bottom.jpg);
     background-position: bottom;
     background-size: 100% 100%;
-    box-shadow: 10px 5px 25px black;
+    box-shadow: 1px 1px 75px black;
     border-radius: 50px;
 }
 
-@media (min-width: 1334px) {
+/* @media (min-width: 1334px) {
     .welcome-section {
         margin: 25px auto 25px auto;
     }
-}
+
+    .nav-list {
+        margin: 25px 0px 25px auto;
+    }
+} */
 
 .welcome-section>p {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 200;
 }
 
+/* ***************************************************************************************** */
 /* Projects section */
 
 .projects-section {
@@ -215,11 +208,11 @@ img {
     border-bottom: 0.2rem solid var(--main-white);
 }
 
-@media (max-width: 28.75em) {
+/* @media (max-width: 28.75em) {
     .projects-section-header {
         font-size: 4rem;
     }
-}
+} */
 
 /* "Automagic" image grid using no media queries */
 .projects-grid {
@@ -237,16 +230,17 @@ img {
     margin-bottom: 6rem;
 }
 
-@media (max-width: 30.625em) {
+/* @media (max-width: 30.625em) {
     .projects-section {
-        /* reduce from padding: 10rem 2rem; for smaller screens */
+        reduce from padding: 10rem 2rem; for smaller screens
         padding: 6rem 1rem;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
     }
-}
+} */
+
 
 .project {
     background: ;
@@ -332,11 +326,11 @@ img {
     font-size: 6rem;
 }
 
-@media (max-width: 28.75em) {
+/* @media (max-width: 28.75em) {
     .contact-section-header>h2 {
         font-size: 4rem;
     }
-}
+} */
 
 .contact-section-header>p {
     font-style: italic;
@@ -381,9 +375,9 @@ footer i {
     vertical-align: middle;
 }
 
-@media (max-width: 28.75em) {
+/* @media (max-width: 28.75em) {
     footer {
         flex-direction: column;
         text-align: center;
     }
-}
+} */
