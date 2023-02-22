@@ -1,8 +1,6 @@
 /* Custom properties/variables  */
 :root {
     --main-white: #f0f0f0;
-    --main-red: #be3144;
-    --main-blue: #45567d;
     --main-gray: rgb(88, 88, 88);
 }
 
@@ -17,13 +15,11 @@
 
 html {
     box-sizing: border-box;
-
     /* Set font size for easy rem calculations
      * default document font size = 16px, 1rem = 16px, 100% = 16px
      * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
     */
     font-size: 62.5%;
-    scroll-behavior: smooth;
     /* A few media queries to set some font sizes at different screen sizes.
      * This helps automate responsiveness.
      * The trick is to use the rem unit for size values, margin and padding.
@@ -31,6 +27,7 @@ html {
      * when we scale up or down the font size on the document
      * it will affect all properties using rem units for the values.
     */
+    scroll-behavior: smooth;
 }
 
 
@@ -66,12 +63,36 @@ html {
 
 body {
     font-family: monospace;
-    font-size: 1.8rem;
     /* 18px */
+    font-size: 1.8rem;
     font-weight: 400;
     line-height: 1.4;
     color: var(--main-gray);
+    background-color: #000;
 }
+
+body {
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+    background: linear-gradient(-45deg, grey, Silver, AntiqueWhite);
+    background-size: 500% 500%;
+    animation: gradient 5s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 h1,
 h2 {
@@ -112,7 +133,9 @@ img {
     position: absolute;
     height: auto;
     top: 0;
-    /* left: 0; */
+    width: 100%;
+    max-width: 1284px;
+    margin-top: 25px;
     width: 100%;
     background: transparent;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
@@ -152,17 +175,25 @@ img {
 /* BOOKMARK */
 
 .welcome-section {
+    max-width: 1284px;
+    height: calc(100vh - 50px);
+    margin: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    ;
-    width: 100%;
-    height: 100vh;
-    background-color: #000;
+    /* BACKGROUND */
     background-image: url(../assets/mountains-bottom.jpg);
-    background-size: cover;
     background-position: bottom;
+    background-size: 100% 100%;
+    box-shadow: 10px 5px 25px black;
+    border-radius: 50px;
+}
+
+@media (min-width: 1334px) {
+    .welcome-section {
+        margin: 25px auto 25px auto;
+    }
 }
 
 .welcome-section>p {
