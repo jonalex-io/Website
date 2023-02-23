@@ -94,6 +94,27 @@ body {
     }
 }
 
+/* FLOAT ANIMATION */
+/* https://codepen.io/MarioDesigns/pen/woJgeo */
+/* TODO: fix boxshadow animation */
+.float {
+    animation: float 5s infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-1px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+}
+
 /* BREAKPOINTS */
 /* I am using the em unit for breakpoints
    * The calculation is the following
