@@ -1,10 +1,11 @@
-/* Custom properties/variables  */
+/* CUSTOM VARIABLES  */
 :root {
     --main-white: #f0f0f0;
     --main-gray: rgb(88, 88, 88);
+    --darker-gray: rgb(77, 77, 77);
 }
 
-/* Base reset */
+/* RESET BASE */
 *,
 *::before,
 *::after {
@@ -13,6 +14,7 @@
     box-sizing: inherit;
 }
 
+/* RESET BOX/FONT-SIZE */
 html {
     box-sizing: border-box;
     /* Set font size for easy rem calculations
@@ -30,6 +32,69 @@ html {
     scroll-behavior: smooth;
 }
 
+/* BASE STYLES */
+body {
+    font-family: monospace;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    color: var(--main-gray);
+}
+
+h1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 4rem;
+    color: var(--darker-gray);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--darker-gray)
+}
+
+/* BACKGROUND ANIMATION */
+body {
+    background: linear-gradient(-45deg, grey, Silver, AntiqueWhite);
+    background-size: 500% 500%;
+    animation: gradient 4s ease infinite;
+    min-height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* FADEIN ANIMATION */
+/* https://codepen.io/JTBennett/pen/BjpXRo */
+.fade-in {
+    animation: fadeIn ease 2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* BREAKPOINTS */
 /* I am using the em unit for breakpoints
    * The calculation is the following
    * screen size divided by browser base font size
@@ -57,140 +122,60 @@ html {
     }
 } */
 
-/* Base styles */
-body {
-    font-family: monospace;
-    font-size: 1.8rem;
-    font-weight: 400;
-    line-height: 1.4;
-    color: var(--main-gray);
-}
-
-body {
-    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
-    background: linear-gradient(-45deg, grey, Silver, AntiqueWhite);
-    background-size: 500% 500%;
-    animation: gradient 4s ease infinite;
-    min-height: 100vh;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-
-h1,
-h2 {
-    font-family: monospace;
-    text-align: center;
-    font-weight: 500;
-    color: rgb(77, 77, 77);
-}
-
-h1 {
-    font-size: 3em;
-}
-
-h2 {
-    font-size: 4.2rem;
-}
-
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-img {
-    display: block;
-    width: 100%;
-}
-
-/* NAV */
-
-.nav {
-    position: absolute;
-    top: 2.5rem;
-    right: 12.5rem;
-    background: transparent;
-}
-
-.nav-list {
-    display: flex;
-    margin-right: 1.5rem;
-}
-
-/* move content to center for smallest mobile device */
-/* @media (max-width: 28.75em) {
-    .nav {
-        justify-content: center;
-    }
-
-    .nav-list {
-        margin: 0 1rem;
-    }
-} */
-
-.nav-list a {
-    display: block;
-    font-size: 2.2rem;
-    padding: 2rem;
-    transition: transform 0.3s ease-out;
-    color: rgb(50, 50, 50);
-    /* TODO make text white */
-    /* transition: var(--main-white); */
-}
-
-.nav-list a:hover {
-    background: var(--main-blue);
-    transform: translateY(5px);
-}
-
-/* Welcome section */
-
-
+/* WELCOME */
 .welcome-section {
-    /* max-width: 1284px; */
     min-height: calc(100vh - 50px);
-    margin: 2.5rem 12.5rem 2.5rem 12.5rem;
+    max-width: calc(100vh - 50px);
+    margin: 2.5rem auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 25px;
+    text-align: center;
     /* BACKGROUND */
     background-image: url(../assets/mountains-bottom.jpg);
     background-position: bottom;
     background-size: 100% 100%;
-    box-shadow: 1px 1px 75px black;
+    box-shadow: 0px 0px 75px black;
     border-radius: 50px;
 }
 
-/* @media (min-width: 1334px) {
-    .welcome-section {
-        margin: 25px auto 25px auto;
-    }
-
-    .nav-list {
-        margin: 25px 0px 25px auto;
-    }
-} */
-
-.welcome-section>p {
-    font-size: 2.5rem;
+.welcome-section p {
+    font-size: 2rem;
     font-weight: 200;
+}
+
+@media (max-width: 100vh) {
+    .welcome-section {
+        margin: 2.5rem;
+    }
+}
+
+/* TODO: fix nav responsiveness */
+/* NAV */
+.nav {
+    position: absolute;
+    top: 2.5rem;
+    right: 14rem;
+}
+
+.nav-list {
+    /* box containing the <a> elements */
+    display: flex;
+}
+
+.nav-list a {
+    /* individual <a> elements */
+    padding: 2.5rem 2rem;
+    /* flex required for animation */
+    display: flex;
+    transition: transform 0.3s ease-out;
+    color: var(--darker-gray);
+}
+
+.nav-list a:hover {
+    transform: translateY(5px);
 }
 
 /* ***************************************************************************************** */
