@@ -97,6 +97,7 @@ body {
 /* FLOAT ANIMATION */
 /* https://codepen.io/MarioDesigns/pen/woJgeo */
 /* TODO: fix boxshadow animation */
+/* TODO: add multipl animations */
 .float {
     animation: float 5s infinite;
 }
@@ -107,13 +108,14 @@ body {
     }
 
     50% {
-        transform: translatey(-1px);
+        transform: translatey(-10px);
     }
 
     100% {
         transform: translatey(0px);
     }
 }
+
 
 /* BREAKPOINTS */
 /* I am using the em unit for breakpoints
