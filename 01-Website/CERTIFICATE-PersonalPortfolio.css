@@ -59,7 +59,7 @@ a {
 /* BACKGROUND ANIMATION */
 body {
     background: linear-gradient(-45deg, grey, Silver, AntiqueWhite);
-    background-size: 500% 500%;
+    background-size: 1000% 1000%;
     animation: gradient 4s ease infinite;
     min-height: 100vh;
 }
@@ -169,29 +169,30 @@ body {
     font-weight: 200;
 }
 
-@media (max-width: 100vh) {
-    .welcome-section {
-        margin: 2.5rem;
-    }
-}
+
 
 /* TODO: fix nav responsiveness */
+/* TODO: space-evenly "contact" right  */
 /* NAV */
 .nav {
     position: absolute;
-    top: 2.5rem;
-    right: 14rem;
+    top: 5rem;
+    min-width: calc(100vh - 5rem);
+    background: transparent;
 }
 
 .nav-list {
     /* box containing the <a> elements */
     display: flex;
+    justify-content: flex-end;
+    margin-right: 1.5rem;
 }
 
 .nav-list a {
     /* individual <a> elements */
-    padding: 2.5rem 2rem;
-    /* flex required for animation */
+    padding: 0rem 2rem;
+
+    /* NAV ANIMATION */
     display: flex;
     transition: transform 0.3s ease-out;
     color: var(--darker-gray);
@@ -199,6 +200,17 @@ body {
 
 .nav-list a:hover {
     transform: translateY(5px);
+}
+
+/* WELCOME & NAV RESPONSIVENESS */
+@media (max-width: 100vh) {
+    .welcome-section {
+        margin: 2.5rem;
+    }
+
+    .nav {
+        min-width: calc(100vw - 5rem);
+    }
 }
 
 /* ***************************************************************************************** */
