@@ -1,10 +1,11 @@
-/* Custom properties/variables  */
+/* CUSTOM VARIABLES  */
 :root {
     --main-white: #f0f0f0;
     --main-gray: rgb(88, 88, 88);
+    --darker-gray: rgb(77, 77, 77);
 }
 
-/* Base reset */
+/* RESET BASE */
 *,
 *::before,
 *::after {
@@ -13,6 +14,7 @@
     box-sizing: inherit;
 }
 
+/* RESET BOX/FONT-SIZE */
 html {
     box-sizing: border-box;
     /* Set font size for easy rem calculations
@@ -30,53 +32,36 @@ html {
     scroll-behavior: smooth;
 }
 
-
-/* I am using the em unit for breakpoints
-   * The calculation is the following
-   * screen size divided by browser base font size
-   * As an example: a breakpoint at 980px
-   * 980px / 16px = 61.25em
-  */
-
-/* 1200px / 16px = 75em L */
-@media (max-width: 75em) {
-    html {
-        font-size: 60%;
-    }
-}
-
-/* 980px / 16px = 61.25em M */
-@media (max-width: 61.25em) {
-    html {
-        font-size: 58%;
-    }
-}
-
-/* 460px / 16px = 28.75em S */
-@media (max-width: 28.75em) {
-    html {
-        font-size: 55%;
-    }
-}
-
-/* Base styles */
-
+/* BASE STYLES */
 body {
     font-family: monospace;
-    /* 18px */
     font-size: 1.8rem;
-    font-weight: 400;
     line-height: 1.4;
     color: var(--main-gray);
-    background-color: #000;
 }
 
+h1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 4rem;
+    color: var(--darker-gray);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--darker-gray)
+}
+
+/* BACKGROUND ANIMATION */
 body {
-    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
     background: linear-gradient(-45deg, grey, Silver, AntiqueWhite);
-    background-size: 500% 500%;
-    animation: gradient 5s ease infinite;
-    height: 100vh;
+    background-size: 1000% 1000%;
+    animation: gradient 4s ease infinite;
+    min-height: 100vh;
 }
 
 @keyframes gradient {
@@ -93,114 +78,185 @@ body {
     }
 }
 
-
-h1,
-h2 {
-    font-family: monospace;
-    text-align: center;
-    font-weight: 500;
-    color: rgb(77, 77, 77);
+/* FADEIN ANIMATION */
+/* https://codepen.io/JTBennett/pen/BjpXRo */
+.fade-in {
+    animation: fadeIn ease 2s;
 }
 
-h1 {
-    font-size: 6rem;
-}
-
-h2 {
-    font-size: 4.2rem;
-}
-
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: var(--main-white);
-    color: black;
-}
-
-img {
-    display: block;
-    width: 100%;
-}
-
-/* nav */
-
-.nav {
-    display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    height: auto;
-    top: 0;
-    width: 100%;
-    max-width: 1284px;
-    margin-top: 25px;
-    width: 100%;
-    background: transparent;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
-}
-
-.nav-list {
-    display: flex;
-    margin-right: 2rem;
-}
-
-/* move content to center for smallest mobile device */
-@media (max-width: 28.75em) {
-    .nav {
-        justify-content: center;
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
     }
 
-    .nav-list {
-        margin: 0 1rem;
+    100% {
+        opacity: 1;
     }
 }
 
-.nav-list a {
-    display: block;
-    font-size: 2.2rem;
-    padding: 2rem;
-    transition: transform 0.3s ease-out;
-    /* TODO make text white */
-    /* transition: var(--main-white); */
+/* FLOAT ANIMATION */
+/* https://codepen.io/MarioDesigns/pen/woJgeo */
+/* TODO: fix boxshadow animation */
+/* TODO: add multipl animations */
+.float {
+    animation: float 5s infinite;
 }
 
-.nav-list a:hover {
-    background: var(--main-blue);
-    transform: translateY(5px);
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-10px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
 }
 
-/* Welcome section */
-/* BOOKMARK */
 
+/* BREAKPOINTS */
+/* I am using the em unit for breakpoints
+   * The calculation is the following
+   * screen size divided by browser base font size
+   * As an example: a breakpoint at 980px
+   * 980px / 16px = 61.25em
+  */
+/* 1200px / 16px = 75em L */
+/* @media (max-width: 75em) {
+    html {
+        font-size: 60%;
+    }
+} */
+
+/* 980px / 16px = 61.25em M */
+/* @media (max-width: 61.25em) {
+    html {
+        font-size: 58%;
+    }
+} */
+
+/* 460px / 16px = 28.75em S */
+/* @media (max-width: 28.75em) {
+    html {
+        font-size: 55%;
+    }
+} */
+
+/* WELCOME */
 .welcome-section {
-    max-width: 1284px;
-    height: calc(100vh - 50px);
-    margin: 25px;
+    min-height: calc(100vh - 50px);
+    max-width: calc(100vh - 50px);
+    margin: 2.5rem auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 25px;
+    text-align: center;
     /* BACKGROUND */
     background-image: url(../assets/mountains-bottom.jpg);
     background-position: bottom;
     background-size: 100% 100%;
-    box-shadow: 10px 5px 25px black;
+    box-shadow: 0px 0px 75px black;
     border-radius: 50px;
 }
 
-@media (min-width: 1334px) {
-    .welcome-section {
-        margin: 25px auto 25px auto;
-    }
-}
-
-.welcome-section>p {
-    font-size: 3rem;
+.welcome-section p {
+    font-size: 2rem;
     font-weight: 200;
 }
 
+
+
+/* TODO: fix nav responsiveness */
+/* TODO: space-evenly "contact" right  */
+/* NAV */
+.nav {
+    position: absolute;
+    top: 5rem;
+    min-width: calc(100vh - 5rem);
+    background: transparent;
+}
+
+.nav-list {
+    /* box containing the <a> elements */
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1.5rem;
+}
+
+.nav-list a {
+    /* individual <a> elements */
+    padding: 0rem 2rem;
+
+    /* NAV ANIMATION */
+    display: flex;
+    transition: transform 0.3s ease-out;
+    color: var(--darker-gray);
+}
+
+.nav-list a:hover {
+    transform: translateY(5px);
+}
+
+/* WELCOME & NAV RESPONSIVENESS */
+@media (max-width: 100vh) {
+    .welcome-section {
+        margin: 2.5rem;
+    }
+
+    .nav {
+        min-width: calc(100vw - 5rem);
+    }
+}
+
+/* POSTERS */
+.container {
+    overflow: hidden;
+    display: flex;
+    height: 10rem;
+    margin: 2.5rem auto;
+    max-width: 100vh;
+    border: solid red;
+}
+
+.container div {
+    display: flex;
+    width: 100%;
+}
+
+.container #Liv {
+    /* animation: slide 5s linear infinite; */
+    /* width: 100rem; */
+    /* TODO: change png to jpg */
+    background-image: url(../assets/liv-poster.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.container #Dozen-Buns {
+    /* width: 100rem; */
+    background-image: url(../assets/dozen-buns.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@keyframes slide {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-1500px, 0, 0);
+        /* The image width */
+    }
+}
+
+
+/* ***************************************************************************************** */
 /* Projects section */
 
 .projects-section {
@@ -215,11 +271,11 @@ img {
     border-bottom: 0.2rem solid var(--main-white);
 }
 
-@media (max-width: 28.75em) {
+/* @media (max-width: 28.75em) {
     .projects-section-header {
         font-size: 4rem;
     }
-}
+} */
 
 /* "Automagic" image grid using no media queries */
 .projects-grid {
@@ -237,16 +293,17 @@ img {
     margin-bottom: 6rem;
 }
 
-@media (max-width: 30.625em) {
+/* @media (max-width: 30.625em) {
     .projects-section {
-        /* reduce from padding: 10rem 2rem; for smaller screens */
+        reduce from padding: 10rem 2rem; for smaller screens
         padding: 6rem 1rem;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
     }
-}
+} */
+
 
 .project {
     background: ;
@@ -332,11 +389,11 @@ img {
     font-size: 6rem;
 }
 
-@media (max-width: 28.75em) {
+/* @media (max-width: 28.75em) {
     .contact-section-header>h2 {
         font-size: 4rem;
     }
-}
+} */
 
 .contact-section-header>p {
     font-style: italic;
@@ -381,9 +438,9 @@ footer i {
     vertical-align: middle;
 }
 
-@media (max-width: 28.75em) {
+/* @media (max-width: 28.75em) {
     footer {
         flex-direction: column;
         text-align: center;
     }
-}
+} */
