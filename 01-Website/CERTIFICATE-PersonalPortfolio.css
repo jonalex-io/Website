@@ -96,8 +96,8 @@ body {
 
 /* FLOAT ANIMATION */
 /* https://codepen.io/MarioDesigns/pen/woJgeo */
+/* TODO: add multiple animations */
 /* TODO: fix boxshadow animation */
-/* TODO: add multipl animations */
 .float {
     animation: float 5s infinite;
 }
@@ -115,35 +115,6 @@ body {
         transform: translatey(0px);
     }
 }
-
-
-/* BREAKPOINTS */
-/* I am using the em unit for breakpoints
-   * The calculation is the following
-   * screen size divided by browser base font size
-   * As an example: a breakpoint at 980px
-   * 980px / 16px = 61.25em
-  */
-/* 1200px / 16px = 75em L */
-/* @media (max-width: 75em) {
-    html {
-        font-size: 60%;
-    }
-} */
-
-/* 980px / 16px = 61.25em M */
-/* @media (max-width: 61.25em) {
-    html {
-        font-size: 58%;
-    }
-} */
-
-/* 460px / 16px = 28.75em S */
-/* @media (max-width: 28.75em) {
-    html {
-        font-size: 55%;
-    }
-} */
 
 /* WELCOME */
 .welcome-section {
@@ -169,10 +140,6 @@ body {
     font-weight: 200;
 }
 
-
-
-/* TODO: fix nav responsiveness */
-/* TODO: space-evenly "contact" right  */
 /* NAV */
 .nav {
     position: absolute;
@@ -202,46 +169,23 @@ body {
     transform: translateY(5px);
 }
 
-/* WELCOME & NAV RESPONSIVENESS */
-@media (max-width: 100vh) {
-    .welcome-section {
-        margin: 2.5rem;
-    }
-
-    .nav {
-        min-width: calc(100vw - 5rem);
-    }
-}
-
 /* POSTERS */
-.container {
+.posters {
     overflow: hidden;
     display: flex;
-    height: 10rem;
+    height: 15rem;
     margin: 2.5rem auto;
-    max-width: 100vh;
-    border: solid red;
+    max-width: calc(100vh - 5rem);
 }
 
-.container div {
-    display: flex;
-    width: 100%;
+.posters img {
+    margin: 1.5rem 0.5rem;
+    box-shadow: 0px 0px 1rem grey;
+    animation: slide 500s linear infinite;
 }
 
-.container #Liv {
-    /* animation: slide 5s linear infinite; */
-    /* width: 100rem; */
-    /* TODO: change png to jpg */
-    background-image: url(../assets/liv-poster.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.container #Dozen-Buns {
-    /* width: 100rem; */
-    background-image: url(../assets/dozen-buns.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
+.square {
+    border-radius: 10%;
 }
 
 @keyframes slide {
@@ -252,6 +196,21 @@ body {
     100% {
         transform: translate3d(-1500px, 0, 0);
         /* The image width */
+    }
+}
+
+/* WELCOME, NAV, posterssS RESPONSIVENESS */
+@media (max-width: 100vh) {
+    .welcome-section {
+        margin: 2.5rem;
+    }
+
+    .nav {
+        min-width: calc(100vw - 5rem);
+    }
+
+    .posters {
+        max-width: calc(100vw - 5rem);
     }
 }
 
