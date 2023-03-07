@@ -38,6 +38,10 @@ body {
     font-size: 1.8rem;
     line-height: 1.4;
     color: var(--main-gray);
+    background: linear-gradient(180deg,
+            aliceblue 100vh,
+            /* TODO: subtract footer height */
+            #666666 calc(100% - 20vh), #444444 100%);
 }
 
 h1 {
@@ -65,12 +69,12 @@ button {
 /* BACKGROUND ANIMATION */
 /* https://codepen.io/P1N2O/pen/pyBNzX */
 body {
-    background: linear-gradient(-225deg,
-            lightgrey, aliceblue, lightgrey);
-    background: aliceblue;
-    background: linear-gradient(180deg,
+    /* background: linear-gradient(-225deg,
+            lightgrey, aliceblue, lightgrey); */
+    /* background: aliceblue; */
+    /* background: linear-gradient(180deg,
             aliceblue 0%,
-            #444444 200%);
+            #444444 200%); */
     /* grey, blue, grey); */
     background-size: 300%;
     animation: gradient 10s ease infinite alternate;
@@ -225,7 +229,7 @@ body {
     background-image: url(../assets/mountains-bottom.jpg);
     background-position: bottom;
     background-size: 100% 100%;
-    box-shadow: 0px 0px 75px black;
+    box-shadow: 0px 0px 75px #333333;
     border-radius: 50px;
 }
 
@@ -335,7 +339,7 @@ body {
     background: linear-gradient(180deg,
             white, gainsboro);
     border-radius: 30px;
-    box-shadow: 0px 0px 75px grey;
+    box-shadow: 0px 0px 75px #333333;
 }
 
 .links-container button {
@@ -498,11 +502,10 @@ body {
 
 
 /* #gradient {
-    height: 100px;
+    height: 666px;
     width: 100%;
     background: linear-gradient(180deg,
             aliceblue,
-            #999999,
             #444444);
 } */
 
@@ -520,9 +523,10 @@ footer {
     align-items: center;
     text-align: center;
     width: 100%;
-    background: var(--main-gray);
-    background: #444444;
-    box-shadow: 0px 0px 25px grey;
+    max-height: 33vh;
+    /* background: var(--main-gray); */
+    /* background: #444444; */
+    /* box-shadow: 0px 0px 25px grey; */
 }
 
 footer>p {
