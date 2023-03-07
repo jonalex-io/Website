@@ -63,11 +63,18 @@ button {
 /* ********************************************************************** */
 
 /* BACKGROUND ANIMATION */
+/* https://codepen.io/P1N2O/pen/pyBNzX */
 body {
-    background: linear-gradient(-45deg, grey, Silver, AntiqueWhite);
-    background-size: 1000% 1000%;
-    animation: gradient 4s linear infinite alternate;
-    min-height: 100vh;
+    background: linear-gradient(-225deg,
+            lightgrey, aliceblue, lightgrey);
+    background: aliceblue;
+    background: linear-gradient(180deg,
+            aliceblue 0%,
+            #444444 200%);
+    /* grey, blue, grey); */
+    background-size: 300%;
+    animation: gradient 10s ease infinite alternate;
+    min-height: 100vh
 }
 
 @keyframes gradient {
@@ -126,19 +133,6 @@ body {
 /* https://ui-buttons.web.app/material-ripple */
 /* TODO: clean button animation code */
 
-.btn-71 {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-appearance: button;
-    background-color: #000;
-    background-image: none;
-    color: #fff;
-    cursor: pointer;
-    font-size: 100%;
-    line-height: 1.5;
-    margin: 0;
-    -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
-    padding: 0;
-}
 
 .btn-71:disabled {
     cursor: default;
@@ -158,49 +152,63 @@ body {
 }
 
 .btn-71 {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: button;
+    background-color: #000;
+    background-image: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 100%;
+    line-height: 1.5;
+    margin: 0;
+    /* TODO: scroll problem reason */
+    -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+    max-width: 100vw;
+    padding: 0;
+}
+
+.btn-71 {
     position: relative;
-    text-transform: uppercase;
 }
 
 .btn-71:before {
-    --opacity: 0.2;
+    /* --opacity: 0.1; */
+    /* opacity: var(--opacity); */
+    opacity: 0.05;
     aspect-ratio: 1;
     background: #fff;
     border-radius: 50%;
     content: "";
-    left: 50%;
-    opacity: var(--opacity);
     position: absolute;
+    left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) scale(0);
+    /* TODO: width scroll issue */
     width: 100%;
-    z-index: -1;
-}
-
-.btn-71:before {
-    /* -webkit-animation: enlarge 1s forwards;
-    animation: enlarge 1s forwards; */
-    -webkit-animation: enlarge 1.5s infinite;
     animation: enlarge 1.5s infinite;
 }
 
-@-webkit-keyframes enlarge {
-    to {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(4);
-    }
-}
-
+/* GOOD */
 @keyframes enlarge {
     to {
         opacity: 0;
-        transform: translate(-50%, -50%) scale(4);
+        transform: translate(-50%, -50%) scale(1.33);
     }
 }
 
 /* ********************************************************************** */
 
 
+#background-image {
+    position: absolute;
+    /* min-width: 100%; */
+    /* min-height: 100%; */
+    min-height: 166%;
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+    filter: blur(0.5rem);
+}
 
 /* WELCOME */
 .welcome {
@@ -321,12 +329,11 @@ body {
 /* LINKS */
 .links-container {
     text-align: center;
-    margin: 2.5rem auto;
+    margin: 2.5rem auto 5rem auto;
     max-width: calc(66.6vh - 5rem);
     padding: 5rem;
-    background: linear-gradient(45deg,
-            silver,
-            white);
+    background: linear-gradient(180deg,
+            white, gainsboro);
     border-radius: 30px;
     box-shadow: 0px 0px 75px grey;
 }
@@ -490,6 +497,15 @@ body {
 }
 
 
+/* #gradient {
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(180deg,
+            aliceblue,
+            #999999,
+            #444444);
+} */
+
 /* Footer */
 footer {
     font-weight: 300;
@@ -505,6 +521,8 @@ footer {
     text-align: center;
     width: 100%;
     background: var(--main-gray);
+    background: #444444;
+    box-shadow: 0px 0px 25px grey;
 }
 
 footer>p {
