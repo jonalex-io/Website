@@ -39,9 +39,10 @@ body {
     line-height: 1.4;
     color: var(--main-gray);
     background: linear-gradient(180deg,
-            aliceblue 100vh,
+            aliceblue 80vh,
+            #777777 95%,
             /* TODO: subtract footer height */
-            #666666 calc(100% - 20vh), #444444 100%);
+            #666666 100%);
 }
 
 h1 {
