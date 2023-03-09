@@ -40,9 +40,9 @@ body {
     color: var(--main-gray);
     background: linear-gradient(180deg,
             aliceblue 80vh,
-            #777777 95%,
+            #999999 90%,
             /* TODO: subtract footer height */
-            #666666 100%);
+            #555 100%);
 }
 
 h1 {
