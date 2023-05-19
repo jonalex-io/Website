@@ -174,7 +174,8 @@ button {
 
 /* WELCOME */
 .welcome {
-    min-height: calc(100vh - 10rem);
+    /* min-height: calc(100vh - 10rem); */
+    height: calc(100vh - 10rem);
     max-width: calc(100vh - 10rem);
     margin: 5rem auto;
     display: flex;
@@ -183,6 +184,7 @@ button {
     align-items: center;
     padding: 25px;
     text-align: center;
+    border: solid red;
     /* BACKGROUND */
     background-image: url(../assets/mountains-bottom.jpg);
     background-position: bottom;
@@ -253,13 +255,12 @@ button {
     border-radius: 50px;
 }
 
-
 /* POSTERS */
 /* TODO: 圓角 */
 .posters {
     display: flex;
-    height: 15rem;
-    margin: 5rem auto;
+    margin: 2.5vh auto;
+    height: calc(17.5vh - 5vh);
     max-width: calc(100vh - 10rem);
     -webkit-mask-image: linear-gradient(to right,
             transparent,
@@ -270,10 +271,11 @@ button {
             black 5% 95%,
             transparent); */
     overflow: hidden;
+    border: solid red;
 }
 
 .posters img {
-    margin: 1.5rem 0.5rem;
+    margin: 0rem 0.5rem;
     /* box-shadow: 0px 0px 10rem grey; */
     animation: slide 150s linear infinite;
 }
@@ -298,7 +300,8 @@ button {
 /* TODO: default styles - button */
 .links-container {
     text-align: center;
-    margin: 5rem auto;
+    margin: 5vh auto;
+    height: calc(60vh - 5vh);
     /* base on vh as h is always =< vw */
     max-width: calc(66.6vh - 10rem);
     /* padding: 5rem 0rem; */
@@ -308,6 +311,7 @@ button {
     border-radius: 30px;
     box-shadow: 0px 0px 33px #333333;
     padding: 5rem;
+    border: solid red;
 }
 
 .links-container button {
@@ -407,17 +411,17 @@ button {
         /* TODO: figure out gradal rather than sudden Responsive design */
         /*       container should match welcome screen at slimmest size */
         /* Two Thirds Less 5rem */
-        max-width: calc(66.6vw - 5rem);
-    }
-
-    .links-container button {
-        min-width: calc(50vw - 5rem);
+        max-width: calc(66.6% - 10rem);
     }
 }
 
 @media (max-width: 66.6vh) {
     .links-container {
-        min-width: 66.6vw;
+        max-width: 66.6vw;
+    }
+
+    .links-container button {
+        width: 100%;
     }
 }
 
@@ -471,6 +475,8 @@ button {
 /* Footer */
 footer {
     font-weight: 300;
+    margin: 2.5vh auto;
+    height: calc(22.5vh - 5vh);
     display: flex;
     justify-content: space-evenly;
     padding: 2rem;
@@ -482,7 +488,7 @@ footer {
     align-items: center;
     text-align: center;
     width: 100%;
-    max-height: 33vh;
+    border: solid red;
     /* background: var(--main-gray); */
     /* background: #444444; */
     /* box-shadow: 0px 0px 25px grey; */
