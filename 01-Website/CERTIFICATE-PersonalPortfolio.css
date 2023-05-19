@@ -64,6 +64,8 @@ a {
 
 button {
     font-family: monospace;
+    font-size: 2rem;
+    color: white;
 }
 
 /* //////////ANIMATION////////////////////////////// */
@@ -172,9 +174,9 @@ button {
 
 /* WELCOME */
 .welcome {
-    min-height: calc(100vh - 50px);
-    max-width: calc(100vh - 50px);
-    margin: 2.5rem auto;
+    min-height: calc(100vh - 10rem);
+    max-width: calc(100vh - 10rem);
+    margin: 5rem auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -185,7 +187,7 @@ button {
     background-image: url(../assets/mountains-bottom.jpg);
     background-position: bottom;
     background-size: 100% 100%;
-    box-shadow: 0px 0px 75px #333333;
+    box-shadow: 0px 0px 33px #333333;
     border-radius: 50px;
 }
 
@@ -199,14 +201,14 @@ button {
 /* NAV */
 .nav {
     position: absolute;
-    top: 5rem;
-    min-width: calc(100vh - 5rem);
+    top: 7.5rem;
+    min-width: calc(100vh - 10rem);
     background: transparent;
 }
 
 .nav #language {
     position: absolute;
-    left: 2.5rem;
+    left: 5rem;
 }
 
 .nav-list {
@@ -237,7 +239,7 @@ button {
     position: absolute;
     min-height: calc(100vh - 50px);
     max-width: calc(100vh - 50px);
-    margin: 2.5rem auto;
+    margin: 5 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -253,19 +255,20 @@ button {
 
 
 /* POSTERS */
+/* TODO: 圓角 */
 .posters {
     display: flex;
     height: 15rem;
-    margin: 2.5rem auto;
-    max-width: calc(100vh - 5rem);
+    margin: 5rem auto;
+    max-width: calc(100vh - 10rem);
     -webkit-mask-image: linear-gradient(to right,
             transparent,
             black 5% 95%,
             transparent);
-    mask-image: linear-gradient(to right,
+    /* mask-image: linear-gradient(to right,
             transparent,
             black 5% 95%,
-            transparent);
+            transparent); */
     overflow: hidden;
 }
 
@@ -292,67 +295,39 @@ button {
 
 
 /* LINKS */
+/* TODO: default styles - button */
 .links-container {
     text-align: center;
-    margin: 2.5rem auto 5rem auto;
-    max-width: calc(66.6vh - 5rem);
-    padding: 5rem 0rem;
+    margin: 5rem auto;
+    /* base on vh as h is always =< vw */
+    max-width: calc(66.6vh - 10rem);
+    /* padding: 5rem 0rem; */
     background: linear-gradient(180deg,
-            white, gainsboro);
+            white,
+            gainsboro);
     border-radius: 30px;
-    box-shadow: 0px 0px 75px #333333;
+    box-shadow: 0px 0px 33px #333333;
+    padding: 5rem;
 }
 
 .links-container button {
-    font-size: 2rem;
-    padding: 2rem .5rem;
-    background: #222222;
-    color: white;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    border-radius: 50px;
-    min-width: calc(50vh - 5rem);
-    margin-bottom: 2.5rem;
-    border: none;
-}
-
-.links-grid {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2.5rem;
-}
-
-
-.link a {}
-
-/* a cool way to add light interactivity */
-/* TODO: change to animated arrow */
-.code {
-    color: var(--main-gray);
-    transition: color 0.3s ease-out;
-    vertical-align: 1.3px;
-}
-
-.link:hover .code {
-    color: #ff7f50;
-    /* vertical-align: 1px; */
-}
-
-.link-image {
-    /* use calculate to leave room for a title at the */
-    /* bottom of a grid block */
-    height: calc(100% - 6.8rem);
-    width: 100%;
-    /* The image keeps its aspect ratio and fills the 
-    given dimension. The image will be clipped to fit */
-    object-fit: cover;
-}
-
-.btn {
     /* display: block adds a break and does not respect padding */
     display: inline-block;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    word-wrap: break-word;
+    border-radius: 25px;
+    width: 80%;
+    height: 6.66rem;
+    background: #222222;
+    margin-bottom: 2.5rem;
+    /* word-wrap: break-word; */
+    /* box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
+    /* border-radius: 50px; */
+    /* margin: 5rem; */
+    /* border: none; */
+    /* border: solid red; */
+}
+
+.links-container button:hover {
+    cursor: pointer;
 }
 
 .btn-show-all {
@@ -377,22 +352,55 @@ button {
     transition: transform 0.3s ease-out;
 }
 
+.links-grid {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* margin-bottom: 5rem; */
+    /* border: solid red; */
+}
+
+.link a {}
+
+/* a cool way to add light interactivity */
+/* TODO: change to animated arrow */
+.code {
+    color: var(--main-gray);
+    transition: color 0.3s ease-out;
+    vertical-align: 1.3px;
+}
+
+.link:hover .code {
+    color: #ff7f50;
+    /* vertical-align: 1px; */
+}
+
+.link-image {
+    /* use calculate to leave room for a title at the */
+    /* bottom of a grid block */
+    height: calc(100% - 6.8rem);
+    width: 100%;
+    /* The image keeps its aspect ratio and fills the
+    given dimension. The image will be clipped to fit */
+    object-fit: cover;
+}
+
 /* //////////RESPONSIVE-DESIGN////////////////////////////// */
+/* orientation switches from horizontal to vertical */
 @media (max-width: 100vh) {
     .welcome {
-        margin: 2.5rem;
+        margin: 5rem;
     }
 
     .welcome .about {
-        margin: 2.5rem;
+        margin: 5rem;
     }
 
     .nav {
-        min-width: calc(100vw - 5rem);
+        min-width: calc(100vw - 10rem);
     }
 
     .posters {
-        max-width: calc(100vw - 5rem);
+        max-width: calc(100vw - 10rem);
     }
 
     .links-container {
