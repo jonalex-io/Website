@@ -259,8 +259,9 @@ button {
 /* TODO: 圓角 */
 .posters {
     display: flex;
-    margin: 2.5vh auto;
+    /* POSTERS:LINKS:FOOTER || 17.5 : 60 : 22.5 */
     height: calc(17.5vh - 5vh);
+    margin: 2.5vh auto;
     max-width: calc(100vh - 10rem);
     -webkit-mask-image: linear-gradient(to right,
             transparent,
@@ -300,8 +301,9 @@ button {
 /* TODO: default styles - button */
 .links-container {
     text-align: center;
-    margin: 5vh auto;
-    height: calc(60vh - 5vh);
+    /* POSTERS:LINKS:FOOTER || 17.5 : 60 : 22.5 */
+    height: calc(60vh);
+    margin: 0 auto;
     /* base on vh as h is always =< vw */
     max-width: calc(66.6vh - 10rem);
     /* padding: 5rem 0rem; */
@@ -475,8 +477,9 @@ button {
 /* Footer */
 footer {
     font-weight: 300;
-    margin: 2.5vh auto;
+    /* POSTERS:LINKS:FOOTER || 17.5 : 60 : 22.5 */
     height: calc(22.5vh - 5vh);
+    margin: 2.5vh auto;
     display: flex;
     justify-content: space-evenly;
     padding: 2rem;
