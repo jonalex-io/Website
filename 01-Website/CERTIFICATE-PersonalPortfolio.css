@@ -519,3 +519,12 @@ footer .other-links {
 footer i {
     vertical-align: middle;
 }
+
+#logo {
+    position: fixed;
+    width: 2.5rem;
+    /* margin-top: 50px; */
+    bottom: 1rem;
+    left: 1rem;
+    opacity: 33%;
+}
