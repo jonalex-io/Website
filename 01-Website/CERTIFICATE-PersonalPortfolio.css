@@ -1,4 +1,4 @@
-/* //////////BASE-STYLES////////////////////////////// */
+/* ***** BASE-STYLES ***** */
 /* CUSTOM VARIABLES  */
 :root {
     --main-white: #f0f0f0;
@@ -68,10 +68,7 @@ button {
     color: white;
 }
 
-/* //////////ANIMATION////////////////////////////// */
-
-/* BACKGROUND ANIMATION */
-/* https://codepen.io/P1N2O/pen/pyBNzX */
+/* ***** ANIMATION ***** */
 
 /* FADEIN ANIMATION */
 /* https://codepen.io/JTBennett/pen/BjpXRo */
@@ -89,68 +86,29 @@ button {
     }
 }
 
-/* FLOAT ANIMATION */
-/* https://codepen.io/MarioDesigns/pen/woJgeo */
-
 /* BUTTON ANIMATION */
 /* https://ui-buttons.web.app/material-ripple */
-/* TODO: clean button animation code */
+/* TODO: 不明白 */
 
-.btn-71:disabled {
-    cursor: default;
-}
-
-.btn-71:-moz-focusring {
-    outline: auto;
-}
-
-.btn-71 svg {
-    display: block;
-    vertical-align: middle;
-}
-
-.btn-71 [hidden] {
-    display: none;
-}
-
-.btn-71 {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-appearance: button;
-    background-color: #000;
-    background-image: none;
-    color: #fff;
-    cursor: pointer;
-    font-size: 100%;
-    line-height: 1.5;
-    margin: 0;
-    /* TODO: scroll problem reason */
-    -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
-    max-width: 100vw;
-    padding: 0;
-}
-
-.btn-71 {
+.btn-highlight {
     position: relative;
+    -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
 }
 
-.btn-71:before {
-    /* --opacity: 0.1; */
-    /* opacity: var(--opacity); */
-    opacity: 0.05;
+.btn-highlight:before {
+    opacity: 0.2;
+    border-radius: 50%;
     aspect-ratio: 1;
     background: #fff;
-    border-radius: 50%;
     content: "";
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) scale(0);
-    /* TODO: width scroll issue */
     width: 100%;
     animation: enlarge 1.5s infinite;
 }
 
-/* GOOD */
 @keyframes enlarge {
     to {
         opacity: 0;
@@ -158,8 +116,7 @@ button {
     }
 }
 
-/* ********************************************************************** */
-
+/* ***** SECTIONS ***** */
 
 #background-image {
     position: absolute;
@@ -185,20 +142,18 @@ button {
     padding: 25px;
     text-align: center;
     border: solid red;
+    box-shadow: 0px 0px 33px #333333;
+    border-radius: 50px;
     /* BACKGROUND */
     background-image: url(../assets/mountains-bottom.jpg);
     background-position: bottom;
     background-size: 100% 100%;
-    box-shadow: 0px 0px 33px #333333;
-    border-radius: 50px;
 }
 
 .welcome p {
     font-size: 2rem;
     font-weight: 200;
 }
-
-
 
 /* NAV */
 .nav {
@@ -236,7 +191,6 @@ button {
 }
 
 /* ABOUT */
-/* TODO: integrate with JS */
 .welcome .about {
     position: absolute;
     min-height: calc(100vh - 50px);
@@ -255,11 +209,45 @@ button {
     border-radius: 50px;
 }
 
+.about {
+    /* min-height: calc(100vh - 10rem); */
+    height: calc(100vh - 10rem);
+    max-width: calc(100vh - 10rem);
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    text-align: center;
+    border: solid red;
+    color: white;
+    background: #282828;
+    box-shadow: 0px 0px 33px #333333;
+    border-radius: 50px;
+}
+
+.about a {
+    color: white;
+}
+
+.about p {
+    font-size: 2rem;
+    font-weight: 200;
+    text-align: left;
+    padding: 5rem;
+}
+
+/* TODO: resize */
+.about img {
+    max-width: 10rem;
+}
+
 /* POSTERS */
 /* TODO: 圓角 */
 .posters {
     display: flex;
-    /* POSTERS:LINKS:FOOTER || 17.5 : 60 : 22.5 */
+    /* POSTERS:LINKS:FOOTER || 17.5 : 50 : 32.5 */
     height: calc(17.5vh - 5vh);
     margin: 2.5vh auto;
     max-width: calc(100vh - 10rem);
@@ -295,14 +283,12 @@ button {
     }
 }
 
-
-
 /* LINKS */
 /* TODO: default styles - button */
 .links-container {
     text-align: center;
-    /* POSTERS:LINKS:FOOTER || 17.5 : 60 : 22.5 */
-    height: calc(60vh);
+    /* POSTERS:LINKS:FOOTER || 17.5 : 50 : 32.5 */
+    height: calc(50vh);
     margin: 0 auto;
     /* base on vh as h is always =< vw */
     max-width: calc(66.6vh - 10rem);
@@ -393,11 +379,9 @@ button {
 /* //////////RESPONSIVE-DESIGN////////////////////////////// */
 /* orientation switches from horizontal to vertical */
 @media (max-width: 100vh) {
-    .welcome {
-        margin: 5rem;
-    }
 
-    .welcome .about {
+    .welcome,
+    .about {
         margin: 5rem;
     }
 
@@ -477,8 +461,8 @@ button {
 /* Footer */
 footer {
     font-weight: 300;
-    /* POSTERS:LINKS:FOOTER || 17.5 : 60 : 22.5 */
-    height: calc(22.5vh - 5vh);
+    /* POSTERS:LINKS:FOOTER || 17.5 : 50 : 32.5 */
+    height: calc(32.5vh - 5vh);
     margin: 2.5vh auto;
     display: flex;
     justify-content: space-evenly;
@@ -522,7 +506,7 @@ footer i {
 
 #logo {
     position: fixed;
-    width: 2.5rem;
+    width: 3.33rem;
     /* margin-top: 50px; */
     bottom: 1rem;
     left: 1rem;
