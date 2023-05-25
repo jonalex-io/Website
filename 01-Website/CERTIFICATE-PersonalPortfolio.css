@@ -141,7 +141,7 @@ button {
     align-items: center;
     padding: 25px;
     text-align: center;
-    border: solid red;
+    /* border: solid red; */
     box-shadow: 0px 0px 33px #333333;
     border-radius: 50px;
     /* BACKGROUND */
@@ -220,7 +220,7 @@ button {
     align-items: center;
     padding: 25px;
     text-align: center;
-    border: solid red;
+    /* border: solid red; */
     color: white;
     background: #282828;
     box-shadow: 0px 0px 33px #333333;
@@ -260,7 +260,7 @@ button {
             black 5% 95%,
             transparent); */
     overflow: hidden;
-    border: solid red;
+    /* border: solid red; */
 }
 
 .posters img {
@@ -300,7 +300,7 @@ button {
     border-radius: 30px;
     box-shadow: 0px 0px 33px #333333;
     padding: 5rem;
-    border: solid red;
+    /* border: solid red; */
     z-index: 0;
 }
 
@@ -490,7 +490,7 @@ footer {
     align-items: center;
     text-align: center;
     width: 100%;
-    border: solid red;
+    /* border: solid red; */
     /* background: var(--main-gray); */
     /* background: #444444; */
     /* box-shadow: 0px 0px 25px grey; */
