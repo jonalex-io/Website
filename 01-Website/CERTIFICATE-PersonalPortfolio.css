@@ -505,6 +505,16 @@ footer .other-links {
     flex-wrap: wrap;
 }
 
+footer .other-links a {
+    margin: 0.5rem;
+    margin-top: 1rem;
+}
+
+footer .other-links i {
+    position: relative;
+    right: -0.75rem;
+}
+
 footer>p {
     margin: 2rem;
     color: white;
