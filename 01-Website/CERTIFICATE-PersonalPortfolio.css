@@ -286,6 +286,7 @@ button {
 /* LINKS */
 /* TODO: default styles - button */
 .links-container {
+    position: relative;
     text-align: center;
     /* POSTERS:LINKS:FOOTER || 17.5 : 50 : 32.5 */
     height: calc(50vh);
@@ -295,11 +296,12 @@ button {
     /* padding: 5rem 0rem; */
     background: linear-gradient(180deg,
             white,
-            gainsboro);
+            darkgrey);
     border-radius: 30px;
     box-shadow: 0px 0px 33px #333333;
     padding: 5rem;
     border: solid red;
+    z-index: 0;
 }
 
 .links-container button {
@@ -320,6 +322,19 @@ button {
 
 .links-container button:hover {
     cursor: pointer;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.75;
+    border-radius: 30px;
+    /* Adjust the opacity as desired */
+    background-image: url(../assets/mountains-bottom-被裁切.jpg);
+    z-index: -1;
 }
 
 .btn-show-all {
