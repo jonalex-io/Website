@@ -1,0 +1,49 @@
+.slideshow-box {
+    width: 20rem;
+    /* Adjust the width and height to your desired dimensions */
+    height: 25rem;
+    overflow: hidden;
+    position: absolute;
+    border: solid red;
+    bottom: 2.5rem;
+    right: 2.5rem;
+}
+
+.slideshow-box img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    animation: cycleImages 6s infinite;
+    /* Adjust the duration as needed */
+}
+
+.slideshow-box img:nth-child(1) {
+    animation-delay: 0s;
+    /* Delay the animation start for the first image */
+}
+
+.slideshow-box img:nth-child(2) {
+    animation-delay: 2s;
+    /* Delay the animation start for the second image */
+}
+
+.slideshow-box img:nth-child(3) {
+    animation-delay: 4s;
+    /* Delay the animation start for the third image */
+}
+
+@keyframes cycleImages {
+
+    0%,
+    33.3333333333% {
+        opacity: 1;
+    }
+
+    33.3333333334%,
+    100% {
+        opacity: 0;
+    }
+}
