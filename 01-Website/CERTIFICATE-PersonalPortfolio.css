@@ -274,44 +274,41 @@ button {
 /* LINKS */
 /* TODO: default styles - button */
 .links-container {
+    /* allow overlay */
     position: relative;
-    text-align: center;
     /* POSTERS:LINKS:FOOTER || 17.5 : 50 : 32.5 */
-    height: calc(50vh);
+    height: 50vh;
     margin: 0 auto;
     /* base on vh as h is always =< vw */
     max-width: calc(66.6vh - 10rem);
-    /* padding: 5rem 0rem; */
+    padding: 5rem 5rem;
     background: linear-gradient(180deg,
             white,
             darkgrey);
     border-radius: 50px;
     box-shadow: 0px 0px 33px #333333;
-    padding: 5rem;
-    /* border: solid red; */
-    display: grid;
-    align-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .links-container button {
-    /* display: block adds a break and does not respect padding */
-    display: inline-block;
-    border-radius: 25px;
-    width: 80%;
-    height: 6.66rem;
+    height: calc((50vh/3) - 6.25rem);
+    border-radius: 5rem;
+    width: 100%;
     background: #222222;
-    margin-bottom: 2.5rem;
-    /* word-wrap: break-word; */
-    /* box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
-    /* border-radius: 50px; */
-    /* margin: 5rem; */
-    /* border: none; */
-    /* border: solid red; */
+    transition: color 0.5s, background 0.5s, font-size 0.5s;
+    border: none;
 }
 
 .links-container button:hover {
     cursor: pointer;
+    color: black;
+    background: rgba(200, 200, 200, 0.25);
+    border: solid 0.33rem #222222;
+    font-size: 120%;
 }
+
 
 .overlay {
     position: absolute;
@@ -333,33 +330,59 @@ button {
     /* border: solid red; */
 }
 
-.link a {}
 
-/* a cool way to add light interactivity */
-/* TODO: change to animated arrow */
-.code {
-    color: var(--main-gray);
-    transition: color 0.3s ease-out;
-    vertical-align: 1.3px;
+/* Footer */
+footer {
+    position: relative;
+    height: calc(25vh - (5rem + 0rem));
+    max-width: calc(66.6vh);
+    margin: 5rem auto 0rem auto;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.link:hover .code {
-    color: #ff7f50;
-    /* vertical-align: 1px; */
+footer .other-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    font-size: 2rem;
+    text-shadow: 0px 0px 5px #1f1f1f;
 }
 
-.link-image {
-    /* use calculate to leave room for a title at the */
-    /* bottom of a grid block */
-    height: calc(100% - 6.8rem);
-    width: 100%;
-    /* The image keeps its aspect ratio and fills the
-    given dimension. The image will be clipped to fit */
-    object-fit: cover;
+footer .other-links .fab,
+footer .other-links .fa-solid {
+    margin-right: 0.5rem;
 }
 
-/* //////////RESPONSIVE-DESIGN////////////////////////////// */
-/* orientation switches from horizontal to vertical */
+.other-link-btn {
+    margin: 0rem 1rem 1rem 1rem;
+    transition: transform 0.3s ease-out;
+}
+
+.other-link-btn:hover {
+    transform: translateY(0.25rem);
+}
+
+footer .copyright {
+    position: absolute;
+    color: white;
+    font-size: 66.6%;
+    /* bottom: calc(-2.5rem + 1rem); */
+    bottom: 1rem;
+}
+
+#logo {
+    position: fixed;
+    width: 3.33rem;
+    bottom: 1rem;
+    left: 1rem;
+    opacity: 33%;
+}
+
+/* *****RESPONSIVE-DESIGN***** */
+/* ~orientation switches from horizontal to vertical */
 @media (max-width: 100vh) {
 
     .welcome,
@@ -391,118 +414,4 @@ button {
     .links-container button {
         width: 100%;
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-/* Contact section */
-.contact-section {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* text-align: center; */
-    /* width: 100%; */
-    /* height: 90vh; */
-    /* padding: 0 2rem; */
-    /* background: var(--main-gray); */
-}
-
-.contact-section-header>h2 {
-    font-size: 6rem;
-}
-
-.contact-section-header>p {
-    font-style: italic;
-}
-
-.other-link-btn {
-    font-size: 2.4rem;
-    text-shadow: 0px 0px 5px #1f1f1f;
-    transition: transform 0.3s ease-out;
-}
-
-.other-link-btn:hover {
-    transform: translateY(8px);
-}
-
-/* Footer */
-footer {
-    font-weight: 300;
-    /* POSTERS:LINKS:FOOTER || 17.5 : 50 : 32.5 */
-    /* height: calc(32.5vh - 5vh); */
-    height: calc(25vh - 5vh);
-    margin: 2.5vh auto;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 2rem;
-    border-top: 4px solid var(--main-red);
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    /* border: solid red; */
-    /* background: var(--main-gray); */
-    /* background: #444444; */
-    /* box-shadow: 0px 0px 25px grey; */
-}
-
-footer .other-links {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 980px;
-    margin-top: 4rem;
-    flex-wrap: wrap;
-}
-
-footer .other-links a {
-    margin: 0.5rem;
-    margin-top: 1rem;
-}
-
-footer .other-links i {
-    position: relative;
-    margin-right: 0.5rem;
-    margin-left: 1rem;
-}
-
-footer>p {
-    margin: 2rem;
-    color: white;
-    text-shadow: 0px 0px 0px #1f1f1f;
-}
-
-footer .other-links {
-    max-width: calc(66.6vh - 5rem);
-}
-
-footer i {
-    vertical-align: middle;
-}
-
-#logo {
-    position: fixed;
-    width: 3.33rem;
-    /* margin-top: 50px; */
-    bottom: 1rem;
-    left: 1rem;
-    opacity: 33%;
 }

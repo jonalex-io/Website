@@ -16,22 +16,22 @@
     bottom: 0;
     right: 0;
     opacity: 0;
-    animation: cycleImages 6s infinite;
+    animation: cycleImages 5s infinite;
     /* Adjust the duration as needed */
 }
 
 .slideshow-box img:nth-child(1) {
-    animation-delay: 0s;
+    animation-delay: calc(0.33*0 * 5s);
     /* Delay the animation start for the first image */
 }
 
 .slideshow-box img:nth-child(2) {
-    animation-delay: 2s;
+    animation-delay: calc(0.33*1 * 5s);
     /* Delay the animation start for the second image */
 }
 
 .slideshow-box img:nth-child(3) {
-    animation-delay: 4s;
+    animation-delay: calc(0.33*2 * 5s);
     /* Delay the animation start for the third image */
 }
 
