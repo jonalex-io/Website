@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="collapsible.css">
+    <link rel="stylesheet" href="CERTIFICATE-PersonalPortfolio.css">
+    <link rel="stylesheet" href="../assets/fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="../assets/fontawesome/css/brands.css">
+    <link rel="stylesheet" href="../assets/fontawesome/css/solid.css">
+</head>
+
+<body>
+    <!-- SCORES -->
+    <img id="background-image" src="../assets/" alt="">
+    <section id="welcome" class="welcome fade-in">
+        <!-- NAV -->
+        <nav id="navbar" class="nav">
+            <ul class="nav-list">
+                <li id="language">
+                    <a href="">中/英</a>
+                </li>
+                <li>
+                    <a href="./CERTIFICATE-PersonalPortfolio.html">Home
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="#posters">Work</a>
+                </li> -->
+                <!-- <li>
+                    <a href="#contact">Contact</a>
+                </li> -->
+            </ul>
+        </nav>
+
+        <button class="collapsible">Brass Quintet (2023-05-05)</button>
+        <div class="content">
+            <button class="collapsible">I - "Source" (2023-01-01)</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip
+                    ex ea commodo consequat.</p>
+            </div>
+            <button class="collapsible">II - "The Dip" (2022-08-15)</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip
+                    ex ea commodo consequat.</p>
+            </div>
+            <button class="collapsible">III - "Exit Strategy" (2023-05-05)</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip
+                    ex ea commodo consequat.</p>
+            </div>
+        </div>
+
+        <!-- <div class="about">
+            Jonathan Alexander (蔣智海) is a Canadian composer, producer, pianist, and multi-instrumentalist of Cantonese
+            and Scottish heritage. Jonathan is currently studying music composition at the University of Lethbridge.
+        </div> -->
+        <!-- <div class="簡介">
+            蔣智海是蘇格蘭廣州的混血兒，出生而長大在加拿大牛仔地。
+        </div> -->
+    </section>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
