@@ -49,12 +49,19 @@ body {
 h1 {
     text-align: center;
     font-weight: 500;
-    font-size: 4rem;
+    /* font-size: 4rem; */
+    font-size: calc(0.035 * 100vh);
     color: var(--darker-gray);
+    /* line-height: 1; */
+}
+
+p {
+    font-size: calc(0.02 * 100vh);
 }
 
 ul {
     list-style: none;
+    font-size: calc(0.02 * 100vh);
 }
 
 a {
@@ -64,7 +71,8 @@ a {
 
 button {
     font-family: monospace;
-    font-size: 2rem;
+    /* font-size: 2rem; */
+    font-size: calc(0.025 * 100vh);
     color: white;
     position: relative;
 }
@@ -139,7 +147,6 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 25px;
     text-align: center;
     /* border: solid red; */
     box-shadow: 0px 0px 33px #333333;
@@ -148,47 +155,40 @@ button {
     background-image: url(../assets/mountains-bottom.jpg);
     background-position: bottom;
     background-size: 100% 100%;
+    padding: 1rem;
 }
 
 .welcome p {
-    font-size: 2rem;
+    /* font-size: 2rem; */
     font-weight: 200;
 }
 
 /* NAV */
 .nav {
     position: absolute;
-    top: 3rem;
-    min-width: calc(100vh - 10rem);
+    top: 5rem;
+    min-width: 100%;
     background: transparent;
     z-index: 1;
-}
-
-.nav #language {
-    position: absolute;
-    left: 5rem;
 }
 
 .nav-list {
     /* box containing the <a> elements */
     display: flex;
-    justify-content: flex-end;
-    margin-right: 3.5rem;
-    margin-top: 1rem;
+    justify-content: flex-start;
+    justify-content: space-between;
+    padding: 0rem 5rem;
+
 }
 
 .nav-list a {
-    /* individual <a> elements */
-    padding: 0rem 2rem;
-
-    /* NAV ANIMATION */
     display: flex;
     transition: transform 0.3s ease-out;
     color: var(--darker-gray);
 }
 
 .nav-list a:hover {
-    transform: translateY(5px);
+    transform: translateY(0.25rem);
 }
 
 /* ABOUT */
@@ -216,7 +216,8 @@ button {
 }
 
 .about p {
-    font-size: 2rem;
+    /* font-size: 2rem; */
+    font-size: calc(0.02 * 100vh);
     font-weight: 200;
     text-align: left;
     padding: 5rem;
@@ -293,8 +294,8 @@ button {
 }
 
 .links-container button {
-    height: calc((50vh/3) - 6.25rem);
-    border-radius: 5rem;
+    min-height: calc((50vh/3) - 6.25rem);
+    border-radius: 25rem;
     width: 100%;
     background: #222222;
     transition: color 0.5s, background 0.5s, font-size 0.5s;
@@ -340,14 +341,17 @@ footer {
     display: flex;
     justify-content: center;
     overflow: hidden;
+    padding: 0rem 5rem;
 }
 
 footer .other-links {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    align-content: flex-start;
-    font-size: 2rem;
+    /* align-content: flex-start; */
+    align-content: center;
+    /* font-size: 2rem; */
+    font-size: calc(0.0225 * 100vh);
     text-shadow: 0px 0px 5px #1f1f1f;
 }
 
@@ -368,14 +372,14 @@ footer .other-links .fa-solid {
 footer .copyright {
     position: absolute;
     color: white;
-    font-size: 66.6%;
+    font-size: calc(0.015 * 100vh);
     /* bottom: calc(-2.5rem + 1rem); */
     bottom: 1rem;
 }
 
 #logo {
     position: fixed;
-    width: 3.33rem;
+    width: 2.5vh;
     bottom: 1rem;
     left: 1rem;
     opacity: 33%;
@@ -383,26 +387,24 @@ footer .copyright {
 
 /* *****RESPONSIVE-DESIGN***** */
 /* ~orientation switches from horizontal to vertical */
+/* ~ */
 @media (max-width: 100vh) {
 
     .welcome,
-    .about {
-        margin: 5rem;
+    .about,
+    .posters {
+        max-width: calc(100vw - 10rem);
     }
 
     .nav {
-        min-width: calc(100vw - 10rem);
-    }
-
-    .posters {
-        max-width: calc(100vw - 10rem);
+        min-width: 100%;
     }
 
     .links-container {
         /* TODO: figure out gradal rather than sudden Responsive design */
         /*       container should match welcome screen at slimmest size */
         /* Two Thirds Less 5rem */
-        max-width: calc(66.6% - 10rem);
+        /* max-width: calc(66.6% - 10rem); */
     }
 }
 
@@ -415,3 +417,9 @@ footer .copyright {
         width: 100%;
     }
 }
+
+/* @media (min-width: 66.6vw) {
+    h1 {
+        font-size: calc(0.05 * 100vw);
+    }
+} */
