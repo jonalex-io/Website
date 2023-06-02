@@ -140,7 +140,7 @@ button {
 /* WELCOME */
 .welcome {
     position: relative;
-    height: calc(100vh - 10rem);
+    height: calc(95vh - 10rem);
     max-width: calc(100vh - 10rem);
     margin: 5rem auto;
     display: flex;
@@ -175,7 +175,6 @@ button {
 .nav-list {
     /* box containing the <a> elements */
     display: flex;
-    justify-content: flex-start;
     justify-content: space-between;
     padding: 0rem 5rem;
 
@@ -194,14 +193,14 @@ button {
 /* ABOUT */
 .about {
     position: relative;
-    height: calc(100vh - 10rem);
+    height: calc(95vh - 10rem);
     max-width: calc(100vh - 10rem);
     margin: 5rem auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 10rem 2.5rem 0rem 2.5rem;
     text-align: center;
     color: black;
     /* border: solid red; */
@@ -209,6 +208,7 @@ button {
     border-radius: 50px;
     /* BACKGROUND */
     background: #dddddd;
+    border: solid red;
 }
 
 .about a {
@@ -220,9 +220,10 @@ button {
     font-size: calc(0.02 * 100vh);
     font-weight: 200;
     text-align: left;
-    padding: 5rem;
     position: relative;
+    height: 70vh;
     border: solid red;
+    padding: 0rem 5rem;
 }
 
 /* TODO: resize */
@@ -255,7 +256,7 @@ button {
 .posters img {
     margin: 0rem 0.5rem;
     /* box-shadow: 0px 0px 10rem grey; */
-    animation: slide 150s linear infinite;
+    animation: slide 125s linear infinite;
 }
 
 .square {
@@ -281,8 +282,8 @@ button {
     height: 50vh;
     margin: 0 auto;
     /* base on vh as h is always =< vw */
-    max-width: calc(66.6vh - 10rem);
-    padding: 5rem 5rem;
+    max-width: calc(66.66vh);
+    padding: 5vh 5vh;
     background: linear-gradient(180deg,
             white,
             darkgrey);
@@ -294,12 +295,15 @@ button {
 }
 
 .links-container button {
-    min-height: calc((50vh/3) - 6.25rem);
+    min-height: calc((50vh/3) - 7.5vh);
     border-radius: 25rem;
     width: 100%;
     background: #222222;
     transition: color 0.5s, background 0.5s, font-size 0.5s;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .links-container button:hover {
@@ -307,7 +311,7 @@ button {
     color: black;
     background: rgba(200, 200, 200, 0.25);
     border: solid 0.33rem #222222;
-    font-size: 120%;
+    font-size: calc(0.0275 * 100vh);
 }
 
 
@@ -335,9 +339,9 @@ button {
 /* Footer */
 footer {
     position: relative;
-    height: calc(25vh - (5rem + 0rem));
+    height: calc(25vh - (0rem + 0rem));
     max-width: calc(66.6vh);
-    margin: 5rem auto 0rem auto;
+    margin: 0rem auto 0rem auto;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -379,7 +383,7 @@ footer .copyright {
 
 #logo {
     position: fixed;
-    width: 2.5vh;
+    height: 3.33vh;
     bottom: 1rem;
     left: 1rem;
     opacity: 33%;
@@ -396,22 +400,16 @@ footer .copyright {
         max-width: calc(100vw - 10rem);
     }
 
+    .links-container {
+        max-width: 66.66vw;
+    }
+
     .nav {
         min-width: 100%;
     }
-
-    .links-container {
-        /* TODO: figure out gradal rather than sudden Responsive design */
-        /*       container should match welcome screen at slimmest size */
-        /* Two Thirds Less 5rem */
-        /* max-width: calc(66.6% - 10rem); */
-    }
 }
 
-@media (max-width: 66.6vh) {
-    .links-container {
-        max-width: 66.6vw;
-    }
+@media (max-width: calc(66.66vh + 10rem)) {
 
     .links-container button {
         width: 100%;
