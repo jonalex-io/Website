@@ -2,8 +2,7 @@
 /* CUSTOM VARIABLES  */
 :root {
     --main-white: #f0f0f0;
-    --main-gray: rgb(88, 88, 88);
-    --darker-gray: rgb(77, 77, 77);
+    --main-gray: rgb(77, 77, 77);
 }
 
 /* RESET BASE */
@@ -36,58 +35,50 @@ html {
 /* BASE STYLES */
 body {
     font-family: monospace;
-    font-size: 1.8rem;
-    line-height: 1.4;
+    font-size: 1.6rem;
+    line-height: 1.5;
     color: var(--main-gray);
-    /* TODO: Create background by subtracting footer height */
     background-image: linear-gradient(180deg,
             rgba(240, 248, 255, 1) 80vh,
             rgba(153, 153, 153, 1) 90%,
             rgba(85, 85, 85, 1) 100%),
         url(../assets/subtle-patterns-.com-white_wall_hash.webp);
     background-repeat: repeat;
-    background-blend-mode: ;
 }
 
 h1 {
     text-align: center;
     font-weight: 500;
-    /* font-size: 4rem; */
-    font-size: calc(0.035 * 100vh);
-    /* font-size: clamp(.1rem, 1.8rem, 20rem); */
-    color: var(--darker-gray);
-    /* line-height: 1; */
+    font-size: 7.2rem;
+    color: var(--main-gray);
 }
 
 p {
-    font-size: calc(0.02 * 100vh);
+    font-size: 4.2rem;
+    color: var(--main-gray)
 }
 
 ul {
     list-style: none;
-    font-size: calc(0.02 * 100vh);
 }
 
 a {
     text-decoration: none;
     color: var(--main-white);
+    font-size: 3.6rem;
 }
 
 button {
     font-family: monospace;
-    /* font-size: 2rem; */
-    font-size: calc(0.025 * 100vh);
-    color: black;
-    position: relative;
+    font-size: 4.8rem;
 }
 
 /* ***** ANIMATION ***** */
-
 /* FADEIN ANIMATION */
 /* https://codepen.io/JTBennett/pen/BjpXRo */
-.fade-in {
+/* .fade-in {
     animation: fadeIn ease 2s;
-}
+} */
 
 @keyframes fadeIn {
     0% {
@@ -99,9 +90,8 @@ button {
     }
 }
 
-/* BUTTON ANIMATION */
+/* BUTTON HIGHLIGHT ANIMATION */
 /* https://ui-buttons.web.app/material-ripple */
-/* TODO: 不明白 */
 
 .btn-highlight {
     position: relative;
@@ -129,96 +119,88 @@ button {
     }
 }
 
+/* ***** BORDER TESTING ***** */
+/* .welcome,
+.welcome .nav,
+.welcome .hero,
+.welcome .title,
+.welcome .hero-links-container,
+.welcome .hero-links-container button,
+.posters,
+footer,
+footer .other-links-container,
+footer .copyright {
+    border: solid red;
+} */
+
 /* ***** SECTIONS ***** */
-
-#background-image {
-    position: absolute;
-    /* min-width: 100%; */
-    /* min-height: 100%; */
-    min-height: 166%;
-    margin: 0;
-    padding: 0;
-    filter: blur(0.5rem);
-}
-
-body::before {
-    background-image: url(../assets/subtle-patterns-.com-white_wall_hash.webp);
-    background-repeat: repeat;
-    position: absolute;
-    opacity: 1;
-}
-
 /* WELCOME */
-.welcome {
-    position: relative;
-    height: calc(95vh - 10rem);
-    max-width: calc(100vh - 10rem);
-    margin: 5rem auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* border: solid red; */
-    box-shadow: 0px 0px 33px #333333;
-    border-radius: 7.5rem;
-    /* BACKGROUND */
-    background-image: url(../assets/mountains-bottom.jpg);
-    background-position: bottom;
-    background-size: 100% 100%;
-    padding: 1rem;
-}
-
-.welcome p {
-    /* font-size: 2rem; */
-    font-weight: 200;
-}
-
-.welcome p,
-.welcome h1 {}
-
-.welcome .links-container-2 {
-    margin-top: 5rem;
-}
-
-.welcome .links-container-2 a {
-    display: block;
-    margin: 2.5rem 0rem;
-    color: white;
-}
-
-.welcome button {
-    color: var(--darker-gray);
-    width: 20rem;
-    color: white;
-    background-color: rgb(66, 66, 66);
-}
 
 /* NAV */
 .nav {
     position: absolute;
     top: 5rem;
-    min-width: 100%;
-    background: transparent;
-    z-index: 1;
+    left: 2.5rem;
+    /* width: calc(100% - (1rem + 1rem)); */
 }
 
-.nav-list {
-    /* box containing the <a> elements */
+.nav a {
+    color: var(--main-gray);
     display: flex;
-    justify-content: space-between;
-    padding: 0rem 5rem;
-
-}
-
-.nav-list a {
-    display: flex;
+    padding: 0rem 2.5rem;
     transition: transform 0.3s ease-out;
-    color: var(--darker-gray);
 }
 
 .nav-list a:hover {
-    transform: translateY(0.25rem);
+    transform: translateY(0.33rem);
+}
+
+/* HERO */
+.welcome {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 90svh;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    /* HORIZONTAL LAYOUT */
+    max-width: 90svh;
+    margin: 5rem auto;
+    /* STYLING */
+    border-radius: 7.5rem;
+    box-shadow: 0px 0px 33px #333333;
+    background-image: url(../assets/mountains-bottom.jpg);
+    background-position: bottom;
+    background-size: 100% 100%;
+}
+
+.welcome .hero {
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.welcome .hero .title p {
+    font-weight: 300;
+}
+
+.welcome .hero .title {
+    margin-bottom: 5rem;
+}
+
+.welcome .hero .hero-links-container button {
+    display: block;
+    margin: 5rem auto;
+    color: white;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    line-height: 2;
+}
+
+.welcome .hero .hero-links-container button a {
+    display: block;
 }
 
 /* ABOUT */
@@ -247,50 +229,44 @@ body::before {
 }
 
 .about p {
-    /* font-size: 2rem; */
-    font-size: calc(0.02 * 100vh);
     font-weight: 200;
     text-align: left;
     position: relative;
     height: 75vh;
-    border: solid red;
+    /* border: solid red; */
     padding: 0rem 5rem;
 }
 
-/* TODO: resize */
 .about img {
     position: relative;
     max-width: 10rem;
 }
 
 /* POSTERS */
-/* TODO: 圓角 */
 .posters {
     display: flex;
-    /* POSTERS:LINKS:FOOTER || 17.5 : 50 : 32.5 */
-    /* height: calc(17.5vh - 5vh); */
-    height: calc(25vh - 7.5vh);
-    margin: 2.5vh auto 5vh auto;
-    max-width: calc(100vh - 10rem);
+    /* height: 32rem; */
+    height: 24rem;
+    margin: 0 auto;
+    max-width: 90svh;
+    /* Scrolling */
     -webkit-mask-image: linear-gradient(to right,
             transparent,
             black 5% 95%,
             transparent);
-    /* mask-image: linear-gradient(to right,
+    mask-image: linear-gradient(to right,
             transparent,
             black 5% 95%,
-            transparent); */
+            transparent);
     overflow: hidden;
-    /* border: solid red; */
 }
 
 .posters img {
     margin: 0rem 0.5rem;
-    /* box-shadow: 0px 0px 10rem grey; */
     animation: slide 125s linear infinite;
 }
 
-.square {
+.posters .square {
     border-radius: 10%;
 }
 
@@ -304,126 +280,40 @@ body::before {
     }
 }
 
-/* LINKS */
-/* TODO: default styles - button */
-.links-container {
-    /* allow overlay */
-    position: relative;
-    /* POSTERS:LINKS:FOOTER || 17.5 : 50 : 32.5 */
-    height: 50vh;
-    margin: 0 auto;
-    /* base on vh as h is always =< vw */
-    max-width: calc(66.66vh);
-    padding: 5vh 5vh;
-    background: linear-gradient(180deg,
-            white,
-            darkgrey);
-    border-radius: 50px;
-    box-shadow: 0px 0px 33px #333333;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.links-container button {
-    min-height: calc((50vh/3) - 7.5vh);
-    border-radius: 25rem;
-    width: 100%;
-    background: #222222;
-    transition: color 0.5s, background 0.5s, font-size 0.5s;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.links-container button:hover {
-    cursor: pointer;
-    color: black;
-    background: rgba(200, 200, 200, 0.25);
-    border: solid 0.33rem #222222;
-    font-size: calc(0.0275 * 100vh);
-}
-
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.75;
-    border-radius: 50px;
-    /* Adjust the opacity as desired */
-    background-image: url(../assets/mountains-bottom-被裁切.jpg);
-    z-index: 0;
-}
-
-.background-overlay {
-    /* background: linear-gradient(180deg,
-            aliceblue 80vh,
-            #999999 90%,
-            #555 100%); */
-    /* opacity: 0.5; */
-    /* Adjust the opacity as desired */
-    /* background-image: url(../assets/subtle-patterns-.com-white_wall_hash.webp); */
-    /* background-repeat: repeat; */
-    /* width: 100%; */
-    /* height: 100%; */
-}
-
-.links-grid {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* margin-bottom: 5rem; */
-    /* border: solid red; */
-}
-
-
-/* Footer */
+/* FOOTER */
 footer {
-    position: relative;
-    height: 25rem;
-    max-width: calc(66.6vh);
-    margin: 0rem auto 0rem auto;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    padding: 0rem 5rem;
-    border: solid red;
+    margin: 0rem auto;
+    margin-top: 5rem;
+    max-width: 90svh;
 }
 
-footer .other-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    /* align-content: flex-start; */
-    align-content: center;
-    /* font-size: 2rem; */
-    font-size: calc(0.0225 * 100vh);
+footer .other-links-container {
     text-shadow: 0px 0px 5px #1f1f1f;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-footer .other-links .fab,
-footer .other-links .fa-solid {
+footer .other-links-container .fab,
+footer .other-links-container .fa-solid {
     margin-right: 0.5rem;
 }
 
-.other-link-btn {
+footer .other-links-container .other-link-btn {
     margin: 0rem 1rem 1rem 1rem;
     transition: transform 0.3s ease-out;
 }
 
-.other-link-btn:hover {
+footer .other-links-container .other-link-btn:hover {
     transform: translateY(0.25rem);
 }
 
 footer .copyright {
-    position: absolute;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
     color: white;
-    font-size: calc(0.015 * 100vh);
-    /* bottom: calc(-2.5rem + 1rem); */
-    bottom: 1rem;
+    font-size: 2.4rem;
 }
 
 #logo {
@@ -441,28 +331,97 @@ footer .copyright {
 
     .welcome,
     .about,
-    .posters {
+    .posters,
+    footer {
         max-width: calc(100vw - 10rem);
     }
 
-    .links-container {
+    /* .links-container {
         max-width: 66.66vw;
-    }
-
-    .nav {
-        min-width: 100%;
-    }
+    } */
 }
 
 @media (max-width: calc(66.66vh + 10rem)) {
 
-    .links-container button {
+    /* .links-container button {
         width: 100%;
-    }
+    } */
 }
 
 /* @media (min-width: 66.6vw) {
     h1 {
         font-size: calc(0.05 * 100vw);
     }
+} */
+
+
+/* ***** LEGACY ***** */
+/* LINKS */
+.links-container {
+    /* allow overlay */
+    /* position: relative; */
+    /* height: 50vh; */
+    /* margin: 0 auto; */
+    /* base on vh as h is always =< vw */
+    /* max-width: calc(66.66vh); */
+    /* padding: 5vh 5vh; */
+    /* background: linear-gradient(180deg, */
+    /* white, */
+    /* darkgrey); */
+    /* border-radius: 50px; */
+    /* box-shadow: 0px 0px 33px #333333; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-around; */
+}
+
+/* .links-container button {
+    min-height: calc((50vh/3) - 7.5vh);
+    border-radius: 25rem;
+    width: 100%;
+    background: #222222;
+    transition: color 0.5s, background 0.5s, font-size 0.5s;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .links-container button:hover {
+    cursor: pointer;
+    color: black;
+    background: rgba(200, 200, 200, 0.25);
+    border: solid 0.33rem #222222;
+    font-size: calc(0.0275 * 100vh);
+} */
+
+.overlay {
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    /* width: 100%; */
+    /* height: 100%; */
+    /* opacity: 0.75; */
+    /* border-radius: 50px; */
+    /* Adjust the opacity as desired */
+    /* background-image: url(../assets/mountains-bottom-被裁切.jpg); */
+    /* z-index: 0; */
+}
+
+/* .background-overlay {
+    background: linear-gradient(180deg,
+            aliceblue 80vh,
+            #999999 90%,
+            #555 100%);
+    opacity: 0.5;
+    Adjust the opacity as desired background-image: url(../assets/subtle-patterns-.com-white_wall_hash.webp);
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+} */
+
+/* .links-grid {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
 } */
