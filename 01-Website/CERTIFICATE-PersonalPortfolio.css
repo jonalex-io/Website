@@ -123,7 +123,7 @@ button a {
 }
 
 /* ***** BORDER TESTING ***** */
-.welcome,
+/* .welcome,
 .welcome .nav,
 .welcome .hero,
 .welcome .title,
@@ -134,7 +134,7 @@ footer,
 footer .other-links-container,
 footer .copyright {
     border: solid red;
-}
+} */
 
 /* ***** SECTIONS ***** */
 /* WELCOME */
@@ -263,7 +263,7 @@ footer .copyright {
 /* POSTERS */
 .posters {
     display: flex;
-    height: 250px;
+    height: 200px;
     margin: 0 auto 50px auto;
     max-width: 80svh;
     /* Scrolling */
@@ -370,6 +370,10 @@ footer .copyright {
 
     footer .other-links-container {
         width: 100%;
+    }
+
+    .posters {
+        height: 250px;
     }
 }
 
