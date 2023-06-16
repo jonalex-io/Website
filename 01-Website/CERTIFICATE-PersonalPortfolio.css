@@ -23,7 +23,7 @@ html {
     */
     font-size: 62.5%;
     /* A few media queries to set some font sizes at different screen sizes.
-     * This helps automate responsiveness.
+
      * The trick is to use the rem unit for size values, margin and padding.
      * Because rem is relative to the document font size
      * when we scale up or down the font size on the document
@@ -49,12 +49,12 @@ body {
 h1 {
     text-align: center;
     font-weight: 500;
-    font-size: 7.2rem;
+    font-size: 4.2rem;
     color: var(--main-gray);
 }
 
 p {
-    font-size: 4.2rem;
+    font-size: 2.4rem;
     color: var(--main-gray)
 }
 
@@ -65,20 +65,23 @@ ul {
 a {
     text-decoration: none;
     color: var(--main-white);
-    font-size: 3.6rem;
+    font-size: 2.4rem;
 }
 
 button {
     font-family: monospace;
-    font-size: 4.8rem;
+}
+
+button a {
+    font-size: 3rem;
 }
 
 /* ***** ANIMATION ***** */
 /* FADEIN ANIMATION */
 /* https://codepen.io/JTBennett/pen/BjpXRo */
-/* .fade-in {
+.fade-in {
     animation: fadeIn ease 2s;
-} */
+}
 
 @keyframes fadeIn {
     0% {
@@ -144,25 +147,29 @@ footer .copyright {
     /* width: calc(100% - (1rem + 1rem)); */
 }
 
-.nav a {
+.nav-list a {
     color: var(--main-gray);
     display: flex;
     padding: 0rem 2.5rem;
-    transition: transform 0.3s ease-out;
+    font-size: 1.8rem;
+    transition: all 0.25s;
 }
 
 .nav-list a:hover {
-    transform: translateY(0.33rem);
+    transform: scale(110%);
+    color: black;
+
 }
 
 /* HERO */
 .welcome {
+    position: relative;
     display: flex;
     flex-direction: column;
-    position: relative;
-    height: 90svh;
+    align-items: center;
     justify-content: center;
     text-align: center;
+    height: 85svh;
     padding: 1rem;
     /* HORIZONTAL LAYOUT */
     max-width: 90svh;
@@ -175,32 +182,36 @@ footer .copyright {
     background-size: 100% 100%;
 }
 
-.welcome .hero {
-    height: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .welcome .hero .title p {
     font-weight: 300;
-}
-
-.welcome .hero .title {
-    margin-bottom: 5rem;
 }
 
 .welcome .hero .hero-links-container button {
     display: block;
     margin: 5rem auto;
-    color: white;
-    width: 50%;
+    color: black;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     line-height: 2;
+    border-radius: 2.5rem;
+    border: none;
+    box-shadow: 0px 1px 3.33px #333333;
+    transition: all 0.5s;
 }
 
 .welcome .hero .hero-links-container button a {
     display: block;
+    transition: all 0.5s;
+}
+
+.welcome .hero .hero-links-container button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 1px 9.99px #333333;
+}
+
+.welcome .hero .hero-links-container button a:hover {
+    color: black;
+    letter-spacing: 1px;
 }
 
 /* ABOUT */
@@ -245,8 +256,7 @@ footer .copyright {
 /* POSTERS */
 .posters {
     display: flex;
-    /* height: 32rem; */
-    height: 24rem;
+    height: 18rem;
     margin: 0 auto;
     max-width: 90svh;
     /* Scrolling */
@@ -285,23 +295,28 @@ footer {
     margin: 0rem auto;
     margin-top: 5rem;
     max-width: 90svh;
+    display: flex;
+    flex-direction: column;
 }
 
 footer .other-links-container {
     text-shadow: 0px 0px 5px #1f1f1f;
+    width: 66.66%;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-footer .other-links-container .fab,
-footer .other-links-container .fa-solid {
+footer .other-links-container .other-link-btn .fab,
+footer .other-links-container .other-link-btn .fa-solid {
     margin-right: 0.5rem;
 }
 
 footer .other-links-container .other-link-btn {
     margin: 0rem 1rem 1rem 1rem;
     transition: transform 0.3s ease-out;
+    font-size: 2.4rem;
 }
 
 footer .other-links-container .other-link-btn:hover {
@@ -309,11 +324,9 @@ footer .other-links-container .other-link-btn:hover {
 }
 
 footer .copyright {
-    margin-top: 5rem;
-    display: flex;
-    justify-content: center;
+    margin: 2.5rem auto;
     color: white;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
 }
 
 #logo {
@@ -327,7 +340,7 @@ footer .copyright {
 /* *****RESPONSIVE-DESIGN***** */
 /* ~orientation switches from horizontal to vertical */
 /* ~ */
-@media (max-width: 100vh) {
+@media (max-width: calc(85svh + 10rem)) {
 
     .welcome,
     .about,
@@ -335,6 +348,8 @@ footer .copyright {
     footer {
         max-width: calc(100vw - 10rem);
     }
+
+    .welcome .hero {}
 
     /* .links-container {
         max-width: 66.66vw;
