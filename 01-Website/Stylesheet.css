@@ -39,9 +39,9 @@ body {
     line-height: 1.5;
     color: var(--main-gray);
     background-image: linear-gradient(180deg,
-            rgba(240, 248, 255, 1) 80vh,
-            rgba(153, 153, 153, 1) 90%,
-            rgba(85, 85, 85, 1) 100%),
+            rgba(240, 248, 255, 0.66) 80svh,
+            rgba(153, 153, 153, 0.66) 90%,
+            rgba(85, 85, 85, 0.66) 100%),
         url(../assets/subtle-patterns-.com-white_wall_hash.webp);
     background-repeat: repeat;
 }
