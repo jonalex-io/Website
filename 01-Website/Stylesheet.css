@@ -198,7 +198,7 @@ footer .copyright {
 }
 
 .welcome .hero {
-    max-height: 80svh;
+    max-height: 100%;
 }
 
 .welcome .hero .title p {
