@@ -3,6 +3,7 @@
 :root {
     --main-white: #f0f0f0;
     --main-gray: rgb(77, 77, 77);
+    --darker-gray: rgb(60, 60, 60);
 
     /* title */
     --fs-600: 2rem;
@@ -39,10 +40,10 @@ body {
     line-height: 1.5;
     color: var(--main-gray);
     background-image: linear-gradient(180deg,
-            rgba(240, 248, 255, 0.66) 80svh,
+            rgba(240, 248, 255, 0.66) 50%,
             rgba(153, 153, 153, 0.66) 90%,
             rgba(85, 85, 85, 0.66) 100%),
-        url(../assets/subtle-patterns-.com-white_wall_hash.webp);
+        url(../assets/背景/subtle-patterns-.com-white_wall_hash.webp);
     background-repeat: repeat;
 }
 
@@ -70,6 +71,7 @@ a {
 
 button {
     font-family: monospace;
+    font-size: var(--fs-400);
 }
 
 button a {
@@ -130,6 +132,8 @@ button a {
 .welcome .hero .hero-links-container button,
 .about p,
 .about .slideshow-box,
+.scores,
+.scores button,
 .nav,
 .nav ul,
 .nav ul li a,
@@ -141,6 +145,10 @@ footer .other-links-container,
 footer .other-links-container a,
 footer .other-links-container i,
 footer .copyright {
+    border: solid red;
+} */
+
+/* * {
     border: solid red;
 } */
 
@@ -184,21 +192,23 @@ footer .copyright {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 80svh;
+    height: clamp(40rem, 80svh, 90svh);
     padding: 1rem;
     /* HORIZONTAL LAYOUT */
     max-width: 40rem;
     margin: 50px auto;
     /* STYLING */
-    border-radius: 75px;
+    border-radius: 50px;
     box-shadow: 0px 0px 33px #333333;
-    background-image: url(../assets/mountains-bottom.jpg);
+    background-image: url(../assets/背景/mountains-bottom.jpg);
     background-position: bottom;
     background-size: 100% auto;
 }
 
 .welcome .hero {
     max-height: 100%;
+    max-width: 30rem;
+    min-width: 60%;
 }
 
 .welcome .hero .title p {
@@ -246,22 +256,17 @@ footer .copyright {
     max-width: 40rem;
     margin: 50px auto;
     /* STYLING */
-    border-radius: 75px;
+    border-radius: 50px;
     box-shadow: 0px 0px 33px #333333;
     background: #dddddd;
-    background-image: url(../assets/mountains-bottom-被裁切.jpg);
+    background-image: url(../assets/背景/mountains-bottom-被裁切.jpg);
+    background-repeat: repeat-y;
 }
 
 .about p {
     font-size: var(--fs-300);
     text-align: left;
-    height: 100%;
-    overflow: scroll;
-    padding-right: 2px;
-}
-
-.about p br {
-    height: 2rem;
+    color: var(--darker-gray);
 }
 
 .about p .slideshow-box {
@@ -269,7 +274,6 @@ footer .copyright {
     height: 5.5rem;
     float: right;
     margin: 0 0 5px 5px;
-    overflow: hidden;
 }
 
 .about p .slideshow-box img {
@@ -282,6 +286,82 @@ footer .copyright {
     animation-name: cycle;
     animation-iteration-count: infinite;
     animation-duration: 8s;
+}
+
+/* SCORES */
+
+.scores {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem;
+    padding-top: 5rem;
+    min-height: 80svh;
+    /* HORIZONTAL LAYOUT */
+    max-width: 40rem;
+    margin: 50px auto;
+    /* STYLING */
+    border-radius: 50px;
+    box-shadow: 0px 0px 33px #333333;
+    background: #dddddd;
+    background-image: url(../assets/背景/mountains-bottom-被裁切.jpg);
+    background-repeat: repeat-y;
+    font-family: monospace;
+}
+
+.scores .collapsible,
+.scores .content p {
+    font-size: 1rem;
+    text-align: left;
+    width: 100%;
+}
+
+.scores .content p {
+    padding: 1rem
+}
+
+.scores iframe {
+    width: 100%;
+    height: 40rem;
+}
+
+/* COLLAPSIBLE */
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active,
+.collapsible:hover {
+    background-color: #555;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    /* transition: max-height 0.2s ease-out; */
+    background-color: #f1f1f1;
 }
 
 /* CYCLE IMAGE ANIMATION */
@@ -393,6 +473,8 @@ footer .other-links-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    /* display: grid; */
+    /* grid-template-columns: repeat(6, 1fr); */
 }
 
 footer .other-links-container .other-links-btn {
@@ -424,34 +506,54 @@ footer .copyright {
 }
 
 /* *****RESPONSIVE-DESIGN***** */
-/* ~orientation switches from horizontal to vertical */
-@media (max-width: calc(80svh + 10rem)) {
-    html {
-        font-size: 1.25rem;
+/* hit side margin equal to top margin of hero card */
+@media (max-width: calc(40rem + 100px)) {
+
+    .welcome,
+    .about,
+    .scores,
+    .posters,
+    footer {
+        max-width: calc(100% - 50px);
     }
 
     .welcome,
     .about,
-    .posters,
-    footer {
-        max-width: calc(100vw - 10rem);
+    .scores {
+        margin: 25px auto;
     }
+
+    .posters {
+        margin-bottom: 25px;
+    }
+}
+
+/* Background Size */
+@media (min-height: 1130px) {
+
+    .welcome,
+    .about,
+    .scores {
+        background-size: 100% 100%;
+    }
+}
+
+/* Background Size */
+@media (max-width: 66.66vh) {
 
     .welcome {
         background-size: 100% 100%;
     }
 }
 
-@media (max-width: calc(55svh + 10rem)) {
-    html {
-        font-size: 1.75rem;
-    }
+/* Adjust font-sizes for mobile */
+@media (max-width: 50vh) {
 
-    footer .other-links-container {
-        width: 100%;
+    html {
+        font-size: 0.825rem;
     }
 
     .posters {
-        height: 250px;
+        height: 150px;
     }
 }
